@@ -1,0 +1,6 @@
+def print_numbers(N):
+    for i in range(1, N + 1):
+        print(i)
+N = int(input("Enter a number N: "))
+print("Numbers from 1 to", N, "are:")
+print_numbers(N)

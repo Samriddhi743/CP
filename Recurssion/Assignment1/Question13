@@ -1,0 +1,11 @@
+def count(arr, number):
+    count = 0
+    for num in arr:
+        if num == number:
+            count += 1
+    return count
+arr = input("Enter the array elements separated by spaces: ").split()
+arr = [int(x) for x in arr]
+number = int(input("Enter the number to count occurrences: "))
+occurrences = count(arr, number)
+print("Number of occurrences of", number, "in the array:", occurrences)
