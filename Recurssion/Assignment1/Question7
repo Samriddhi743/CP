@@ -1,0 +1,28 @@
+def factorial(n):
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
+def modular_inverse(a, m):
+    m0 = m
+    x0, x1 = 0, 1
+    if m == 1:
+        return 0
+    while a > 1:
+        q = a // m
+        m, a = a % m, m
+        x0, x1 = x1 - q * x0, x0
+    if x1 < 0:
+        x1 += m0
+    return x1
+def mod_m(n, r, m):
+    if r == 0:
+        return 1
+    num = factorial(n) % m
+    den = (factorial(r) * factorial(n - r)) % m
+    return (num * modular_inverse(den, m)) % m
+n = int(input("Enter the value of n: "))
+r = int(input("Enter the value of r: "))
+m = int(input("Enter the value of m: "))
+result = mod_m(n, r, m)
+print("Result of", n, "C", r, "%", m, "is", result)

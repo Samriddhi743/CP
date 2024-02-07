@@ -1,0 +1,16 @@
+def power_mod(a, b, m):
+    if m == 1:
+        return 0
+    result = 1
+    a = a % m
+    while b > 0:
+        if b % 2 == 1:
+            result = (result * a) % m
+        b = b // 2
+        a = (a * a) % m
+    return result
+a = int(input("Enter the value of a: "))
+b = int(input("Enter the value of b: "))
+m = int(input("Enter the value of m: "))
+result = power_mod(a, b, m)
+print("Result of", a, "^", b, "%", m, "is", result)
