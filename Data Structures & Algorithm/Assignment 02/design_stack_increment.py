@@ -25,6 +25,3 @@ class CustomStack:
         idx = min(k, len(self.stack)) - 1
         if idx >= 0:
             self.increments[idx] += val
-
-        
-
